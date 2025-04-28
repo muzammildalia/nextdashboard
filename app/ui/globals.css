@@ -1,0 +1,49 @@
+:root {
+  --bg: #0B0B0F;
+  --bgSoft: #0B0B0F;
+  --text: white;
+  --textSoft: #b7bac1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  width: 539px;
+  height: 907px;
+  background: url("/bg-gradient-img.png");
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+body:after {
+  content: "";
+  position: absolute;
+  width: 501px;
+  height: 270px;
+  background: url("/top-left.png");
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
