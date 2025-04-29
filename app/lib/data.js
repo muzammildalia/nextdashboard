@@ -1,6 +1,13 @@
 import { User } from "./models/User";
 import { Product } from "./models/Product";
 import { connectToDB } from "./db";
+import {
+  MdAddCircle,
+  MdCircle,
+  MdOutlinePerson,
+  MdOutlineStarPurple500,
+  MdVisibility,
+} from "react-icons/md";
 
 export const fetchUsers = async (q, page) => {
   // const regex = new RegExp(q, "i");
@@ -69,20 +76,50 @@ export const fetchProduct = async (id) => {
 export const cards = [
   {
     id: 1,
-    title: "Total Users",
-    number: 10.928,
-    change: 12,
+    icon: <MdVisibility />,
+    title: "live Visits",
+    text: 500,
+    change: "Live",
+    subiconposition: "before",
+    subicon: <MdCircle size={10} />,
+    border: "1px solid #0bdb23",
+    bgcolor: " rgba(5, 193, 104, 0.2)",
+    color: "#14CA74",
   },
   {
     id: 2,
-    title: "Stock",
-    number: 8.236,
-    change: -2,
+    icon: <MdOutlinePerson />,
+    title: "Monthly users",
+    text: "3.6K",
+    subiconposition: "after",
+    subicon: <MdCircle size={10} />,
+    change: "12.6%",
+    border: "1px solid #FF5A65",
+    bgcolor: " rgba(255, 90, 110, 0.2)",
+    color: "#FF5A65",
   },
   {
     id: 3,
-    title: "Revenue",
-    number: 6.642,
-    change: 18,
+    icon: <MdAddCircle />,
+    title: "New sign ups",
+    text: "456",
+    subiconposition: "after",
+    subicon: <MdCircle size={10} />,
+    change: "3.1%",
+    border: "1px solid #FF5A65",
+    bgcolor: " rgba(255, 90, 110, 0.2)",
+    color: "#FF5A65",
+  },
+  {
+    id: 3,
+    icon: <MdOutlineStarPurple500 />,
+    title: "Subscriptions",
+    text: "2.3K",
+    subiconposition: "after",
+    subicon: <MdCircle size={10} />,
+    change: "35.3%",
+    border: "1px solid #FF5A65",
+    bgcolor: " rgba(255, 90, 110, 0.2)",
+    color: "#FF5A65",
   },
 ];

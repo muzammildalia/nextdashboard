@@ -1,13 +1,13 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import styles from "./loginForm.module.css";
+import styles from "./sigupForm.module.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 
-const LoginForm = () => {
-  const [username, setUsername] = useState("");
+const SignupForm = () => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -15,7 +15,7 @@ const LoginForm = () => {
     e.preventDefault();
     const res = await signIn("credentials", {
       redirect: false,
-      username,
+      email,
       password,
     });
 
@@ -36,24 +36,22 @@ const LoginForm = () => {
         className={styles.form}
         style={{ alignItems: "flex-start" }}
       >
-        <h3 className={styles.title}>Welcome Back, 👋</h3>
-        <p className={styles.subtitle}>
-          Sign in to your dashboard & start tracking your analytics.
-        </p>
+        <h3 className={styles.title}>Create an Account!</h3>
+        <p className={styles.subtitle}>Create a new account here.</p>
 
         <div className={styles.inputGroup} style={{ width: "100%" }}>
-          <label className={styles.label}>Username</label>
+          <label className={styles.label}>Email</label>
           <input
             type="user"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Example@email.com"
             className={styles.input}
             style={{ display: "flex", width: "100%", height: 10 }}
           />
         </div>
 
-        <div className={styles.inputGroup1} style={{ width: "100%" }}>
+        <div className={styles.inputGroup} style={{ width: "100%" }}>
           <label className={styles.label}>Password</label>
           <input
             type="password"
@@ -65,11 +63,7 @@ const LoginForm = () => {
             style={{ display: "flex", width: "100%", height: 10 }}
           />
         </div>
-        <div className={styles.forgotPassword}>
-          <Link href="/forgot-password" className={styles.forgotPasswordLink}>
-            Forgot Password?
-          </Link>
-        </div>
+
         <button
           type="submit"
           className={styles.csutom_buton}
@@ -77,7 +71,7 @@ const LoginForm = () => {
             width: "100%",
           }}
         >
-          Sign In
+          Sign Up
         </button>
 
         {error && <div className={styles.error}>{error}</div>}
@@ -86,4 +80,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;

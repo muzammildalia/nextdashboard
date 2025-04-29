@@ -4,25 +4,10 @@ import LoginForm from "../ui/login/loginForm/loginForm";
 
 const SigninPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.maincontainer}>
       <LoginForm />
     </div>
   );
 };
 
 export default SigninPage;
-
-// <form onSubmit={handleLogin}>
-//   <input
-//     value={username}
-//     onChange={(e) => setUsername(e.target.value)}
-//     placeholder="Username"
-//   />
-//   <input
-//     type="password"
-//     value={password}
-//     onChange={(e) => setPassword(e.target.value)}
-//     placeholder="Password"
-//   />
-//   <button type="submit">Login</button>
-// </form>
